@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/background_primary"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        android:fillViewport="true"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivBackground"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.4"
+                android:contentDescription="@string/background_principal"
+                android:src="@drawable/bg_principal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivLogo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/img_logo"
+                android:contentDescription="@string/imagem_logo"
+                android:layout_margin="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="36dp"
+                android:layout_marginTop="48dp"
+                android:text="@string/sorteador_de_n_meros"
+                android:textAppearance="@style/TextAppearance.Sora.DisplayMedium"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ivLogo" />
+
+
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/fcvContent"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_margin="36dp"
+                app:layout_constraintBottom_toTopOf="@+id/btnDraw"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+               />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_ir"
+                android:text="@string/sortear"
+                android:paddingHorizontal="48dp"
+                android:background="@drawable/bg_button"
+                android:id="@+id/btnDraw"
+                android:layout_margin="36dp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivBackground"
+                />
+
+            <TextView
+                android:id="@+id/tvFirstInfoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/ic_chat"
+                android:drawablePadding="16dp"
+                android:layout_marginHorizontal="36dp"
+                android:paddingStart="36dp"
+                android:text="@string/como_funciona_o_sorteador_de_n_meros"
+                android:textAppearance="@style/TextAppearance.RobotoFlex.ParagraphMedium"
+                android:textColor="@color/content_brand"
+                app:drawableTint="@color/content_brand"
+                app:layout_constraintTop_toBottomOf="@+id/btnDraw"
+             />
+
+            <TextView
+                android:id="@+id/tvFirstInfoContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="16dp"
+                android:layout_marginHorizontal="36dp"
+                android:text="@string/o_sorteador_utiliza_um_algoritmo_de_conteudo"
+                android:textAppearance="@style/TextAppearance.RobotoFlex.ParagraphMedium"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvFirstInfoTitle" />
+
+            <TextView
+                android:id="@+id/tvSecondInfoTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:drawableStartCompat="@drawable/ic_chat"
+                android:drawablePadding="16dp"
+                android:paddingStart="36dp"
+                android:layout_marginHorizontal="36dp"
+                android:text="@string/posso_escolher_o_intervalo_dos_n_meros"
+                android:textAppearance="@style/TextAppearance.RobotoFlex.ParagraphMedium"
+                android:textColor="@color/content_brand"
+                app:drawableTint="@color/content_brand"
+                app:layout_constraintTop_toBottomOf="@+id/tvFirstInfoContent"
+                />
+
+            <TextView
+                android:id="@+id/tvSecondInfoContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="16dp"
+                android:layout_marginHorizontal="36dp"
+                android:text="@string/sim_voc_pode_definir_os_valores_m_nimo_e_m_ximo_para_o_intervalo_dos_n_meros_sorteados"
+                android:textAppearance="@style/TextAppearance.RobotoFlex.ParagraphMedium"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="36dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvSecondInfoTitle" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

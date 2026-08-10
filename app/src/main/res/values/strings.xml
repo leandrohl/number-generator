@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Sorteador de Números</string>
+    <string name="background_principal">Background principal</string>
+    <string name="imagem_logo">Imagem logo</string>
+    <string name="sorteador_de_n_meros">SORTEADOR DE NÚMEROS</string>
+    <string name="sortear">Sortear</string>
+    <string name="como_funciona_o_sorteador_de_n_meros">Como funciona o sorteador de números</string>
+    <string name="o_sorteador_utiliza_um_algoritmo_de_conteudo">O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo especificado pelo usuário.</string>
+    <string name="posso_escolher_o_intervalo_dos_n_meros">Posso escolher o intervalo dos números?</string>
+    <string name="sim_voc_pode_definir_os_valores_m_nimo_e_m_ximo_para_o_intervalo_dos_n_meros_sorteados">Sim, você pode definir os valores mínimo e máximo para o intervalo dos números sorteados.</string>
 </resources>
