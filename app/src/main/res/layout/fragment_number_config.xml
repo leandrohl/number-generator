@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:background="@color/background_primary"
+    tools:context=".NumberConfigFragment">
+
+    <TextView
+        android:id="@+id/tvInfoTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/quero_sortear"
+        android:textAppearance="@style/TextAppearance.RobotoFlex.LabelMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvInfoContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/defina_o_intervalo_content"
+        android:textAppearance="@style/TextAppearance.RobotoFlex.ParagraphMedium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoTitle" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvInfoContent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/n_meros"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.RobotoFlex.LabelMedium"
+                android:textColor="@color/content_secondary" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="8dp" />
+
+            <EditText
+                android:id="@+id/etAmountNumbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext"
+                android:inputType="number"
+                android:padding="16dp"
+                android:text="2"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.Sora.DisplaySmall"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="0dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/de"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.RobotoFlex.LabelMedium"
+                android:textColor="@color/content_secondary" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="8dp" />
+
+            <EditText
+                android:id="@+id/etInitialLimit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext"
+                android:inputType="number"
+                android:padding="16dp"
+                android:text="1"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.Sora.DisplaySmall"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="0dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ate"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.RobotoFlex.LabelMedium"
+                android:textColor="@color/content_secondary" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="8dp" />
+
+            <EditText
+                android:id="@+id/etFinalLimit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_edittext"
+                android:inputType="number"
+                android:padding="16dp"
+                android:text="100"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.Sora.DisplaySmall"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.materialswitch.MaterialSwitch
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:id="@+id/swtNotRepeatNumbers"
+        app:thumbTint="@android:color/white"
+        app:trackTint="@color/content_tertiary"
+        app:trackDecorationTint="@android:color/transparent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/nao_repetir_numero"
+        app:layout_constraintBottom_toBottomOf="@+id/swtNotRepeatNumbers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/swtNotRepeatNumbers"
+        app:layout_constraintTop_toTopOf="@+id/swtNotRepeatNumbers" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,9 +12,12 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scrollbars="vertical"
         android:fillViewport="true"
-        >
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -30,6 +33,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.0"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
@@ -59,37 +63,44 @@
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fcvContent"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="wrap_content"
                 android:layout_margin="36dp"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/main_content_nav_graph"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toTopOf="@+id/btnDraw"
-                app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-               />
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnDraw"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableEnd="@drawable/ic_ir"
-                android:text="@string/sortear"
-                android:paddingHorizontal="48dp"
-                android:background="@drawable/bg_button"
-                android:id="@+id/btnDraw"
                 android:layout_margin="36dp"
-                app:layout_constraintBottom_toBottomOf="@+id/ivBackground"
-                />
+                android:background="@drawable/bg_button"
+                android:drawableEnd="@drawable/ic_ir"
+                android:paddingHorizontal="48dp"
+                android:text="@string/sortear"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/fcvContent" />
 
             <TextView
                 android:id="@+id/tvFirstInfoTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:drawableStartCompat="@drawable/ic_chat"
-                android:drawablePadding="16dp"
                 android:layout_marginHorizontal="36dp"
-                android:paddingStart="36dp"
-                android:text="@string/como_funciona_o_sorteador_de_n_meros"
+                android:layout_marginTop="24dp"
+                android:drawablePadding="8dp"
                 android:textAppearance="@style/TextAppearance.RobotoFlex.ParagraphMedium"
                 android:textColor="@color/content_brand"
+                app:drawableStartCompat="@drawable/ic_chat"
                 app:drawableTint="@color/content_brand"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/btnDraw"
+                android:text="@string/como_funciona_o_sorteador_de_n_meros"
              />
 
             <TextView
@@ -101,22 +112,25 @@
                 android:text="@string/o_sorteador_utiliza_um_algoritmo_de_conteudo"
                 android:textAppearance="@style/TextAppearance.RobotoFlex.ParagraphMedium"
                 android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvFirstInfoTitle" />
 
             <TextView
                 android:id="@+id/tvSecondInfoTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:drawableStartCompat="@drawable/ic_chat"
-                android:drawablePadding="16dp"
-                android:paddingStart="36dp"
                 android:layout_marginHorizontal="36dp"
+                android:layout_marginTop="24dp"
+                android:drawablePadding="8dp"
                 android:text="@string/posso_escolher_o_intervalo_dos_n_meros"
                 android:textAppearance="@style/TextAppearance.RobotoFlex.ParagraphMedium"
                 android:textColor="@color/content_brand"
+                app:drawableStartCompat="@drawable/ic_chat"
                 app:drawableTint="@color/content_brand"
-                app:layout_constraintTop_toBottomOf="@+id/tvFirstInfoContent"
-                />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvFirstInfoContent" />
 
             <TextView
                 android:id="@+id/tvSecondInfoContent"
@@ -124,6 +138,8 @@
                 android:layout_height="wrap_content"
                 android:drawablePadding="16dp"
                 android:layout_marginHorizontal="36dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 android:text="@string/sim_voc_pode_definir_os_valores_m_nimo_e_m_ximo_para_o_intervalo_dos_n_meros_sorteados"
                 android:textAppearance="@style/TextAppearance.RobotoFlex.ParagraphMedium"
                 android:layout_marginTop="8dp"
